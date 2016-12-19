@@ -24,7 +24,7 @@ def fetchTieBaPage(url,file=None,minWords=0):
         return
     #可以输入贴子数字编号来获取内容
     if url.isalnum():
-        url='http://tieba.baidu.com/p/'+url
+        url='http://tieba.baidu.com/p/'+url+'?see_lz=1'
     elif 'tieba.baidu.com/p/' not in url:
         print('错误：无法识别的贴吧贴子地址！')
         return
@@ -56,7 +56,8 @@ def fetchTieBaPage(url,file=None,minWords=0):
                 isDel=input('按回车键保留本段文字，其它键删除本段：')
                 print('='*80)
                 if not isDel:
-                    print(parseText,file=f)
+                    f.write(parseText)
+                    f.write('\n')
             else:
                 input('')
     #如果有下一页，则读取下一页的内容
