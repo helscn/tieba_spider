@@ -74,7 +74,7 @@ def main():
         url=input('请输入百度贴吧贴子地址：')
     f=input('请输入保存的文件名：')
     print('='*80,'\n')        
-    fetchTieBaPage(url,f,100)
+    fetchTieBaPage(url,f)
 
 if __name__ == '__main__':
     main()
